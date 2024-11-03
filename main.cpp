@@ -19,6 +19,14 @@ public:
     void push(int data) {
         
         // Add definitions
+        // Create a new node
+        Node* newNode = new Node(data);
+        
+        // point next of new node to topNode
+        newNode->next = top;
+
+        // top node will be new node
+        top = newNode;
     }
 
     // Remove and return the top element of the stack
@@ -34,6 +42,11 @@ public:
     // Return the top element of the stack without removing it
     int peek() const {
         // Add definitions
+        // Check if the Stack if empty
+        if(top == nullptr){
+            std::cout << "Empty stack\n";
+        }
+        return top->data;
     }
 
     // Destructor to free the allocated memory
@@ -53,9 +66,9 @@ int main() {
 
     std::cout << "Top element is: " << stack.peek() << std::endl; // Should print 3
 
-    while (!stack.isEmpty()) {
-        std::cout << "Popping: " << stack.pop() << std::endl;
-    }
+    // while (!stack.isEmpty()) {
+    //     std::cout << "Popping: " << stack.pop() << std::endl;
+    // }
 
     return 0;
 }
