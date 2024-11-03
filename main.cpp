@@ -12,9 +12,9 @@ int main() {
 
     std::cout << "Top element is: " << stack.peek() << std::endl; // Should print 3
 
-    while (!stack.isEmpty()) {
-        std::cout << "Popping: " << stack.pop() << std::endl;
-    }
+    // while (!stack.isEmpty()) {
+    //     std::cout << "Popping: " << stack.pop() << std::endl;
+    // }
 
     return 0;
 }

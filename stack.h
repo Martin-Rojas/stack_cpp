@@ -10,7 +10,7 @@ class Node{
         Node *next;
     
         // Constructor to initialize a node with data
-        Node(int data) : data(data), next(nullptr) {}
+        Node(T data) : data(data), next(nullptr) {}
 };
 
 template <typename T>
