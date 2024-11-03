@@ -32,19 +32,40 @@ public:
     // Remove and return the top element of the stack
     int pop() {
         // Add definition for pop
+        // check if the stack is empty
+        if(isEmpty()){
+            throw std::out_of_range(" The stack is empty.\n");
+
+        }
+        // Store the current top into a tem variable
+        Node *temp = top;
+        // get data from the old top
+        int popedData = top->data;
+        // Move the top to next node
+        top = top->next;
+        
+        //delete old top = temp
+        delete temp;
+        // return the data from the pop node
+        return popedData;
     }
 
     // Check if the stack is empty
     bool isEmpty() const {
         // Add definitions
+        if(top == nullptr){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     // Return the top element of the stack without removing it
     int peek() const {
         // Add definitions
         // Check if the Stack if empty
-        if(top == nullptr){
-            std::cout << "Empty stack\n";
+        if(isEmpty()){
+            throw std::out_of_range(" The stack is empty.\n");
         }
         return top->data;
     }
@@ -66,9 +87,9 @@ int main() {
 
     std::cout << "Top element is: " << stack.peek() << std::endl; // Should print 3
 
-    // while (!stack.isEmpty()) {
-    //     std::cout << "Popping: " << stack.pop() << std::endl;
-    // }
+    while (!stack.isEmpty()) {
+        std::cout << "Popping: " << stack.pop() << std::endl;
+    }
 
     return 0;
 }
