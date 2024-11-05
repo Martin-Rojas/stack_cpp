@@ -1,3 +1,11 @@
+
+/**
+Programmer: Martin Rojas
+Project number: 4
+Project Desc: A stack class with 4 fuction push, pop, peek and IsEmpty
+Course: COSC 2436 PF III Data Structures
+Date:   11/03/2024
+*/
 #include <iostream>
 
 class Node {
@@ -70,6 +78,15 @@ public:
         return top->data;
     }
 
+    void displayStack(){
+        Node *current = top;
+        while(current){
+            std::cout << current->data << " ";
+            current = current->next;
+        }
+        std::cout << "\n";
+    }
+
     // Destructor to free the allocated memory
     ~Stack() {
         while (!isEmpty()) {
@@ -84,6 +101,8 @@ int main() {
     stack.push(1);
     stack.push(2);
     stack.push(3);
+
+    stack.displayStack();
 
     std::cout << "Top element is: " << stack.peek() << std::endl; // Should print 3
 
